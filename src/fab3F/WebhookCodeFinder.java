@@ -20,7 +20,7 @@ public class WebhookCodeFinder implements Runnable{
     Thread thread;
 
     WebhookCodeFinder() {
-        this.name = "WebhookCodeFinder-"+(Main.webhookCodeFinders.size()+1);;
+        this.name = "WebhookCodeFinder-"+(Main.webhookCodeFinders.size()+1);
         thread = new Thread(this, name);
         System.out.println("[THREAD] Neuer Thread erstellt: " + thread);
         exitThread = false;

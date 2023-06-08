@@ -36,7 +36,7 @@ public class RandomRepositoryFinder implements Runnable{
 
             if(Main.RANDOM_REPOSITORY_URLS.size()<Main.RANDOM_REPOSITORY_FINDER_AMOUNT_MAX_URLS_IN_LIST){
                 int amount = 100;
-                if(Main.RANDOM_REPOSITORY_FINDER_AMOUNT_PER_REQUEST>1 || Main.RANDOM_REPOSITORY_FINDER_AMOUNT_PER_REQUEST<=100){
+                if(Main.RANDOM_REPOSITORY_FINDER_AMOUNT_PER_REQUEST>=1 && Main.RANDOM_REPOSITORY_FINDER_AMOUNT_PER_REQUEST<=100){
                     amount = Main.RANDOM_REPOSITORY_FINDER_AMOUNT_PER_REQUEST;
                 }
                 List<String> list = getUrls(amount, Main.charList.get(Main.random.nextInt(Main.charList.size())));

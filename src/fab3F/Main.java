@@ -14,7 +14,8 @@ import java.util.regex.Pattern;
 
 public class Main {
 
-    private static JSONObject config;
+    public static final String configFilePath = "config.json";
+    public static JSONObject config;
 
     public static boolean debug; // Bei false werden Fehler ignoriert
     public static String GITHUB_TOKEN; // nur 90 Tage gültig Stand 4.6.23
@@ -55,7 +56,7 @@ public class Main {
 
     public static void main(String[] args) {
         // Konfiguartion
-        config = readConfigFromFile("config.json");
+        config = readConfigFromFile(configFilePath);
         if (config == null) {
             System.out.println("[ERROR] Fehler beim Lesen der Konfigurationsdatei.");
             return;
