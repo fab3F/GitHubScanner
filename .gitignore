@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Project exclude paths
+/out/
+/.idea/
+GITHUB_REPOSITORY_WITH_WEBHOOK
+/GITHUB_REPOSITORYS_NO_WEBHOOK/
+GitHubScanner.iml
+config.json
