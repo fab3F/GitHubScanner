@@ -31,9 +31,9 @@ public class GeneralWebhookChecker {
         return working;
     }
 
-    public static void addRepository(String repositoryUrl){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(Main.FILEPATH_GITHUB_REPOSITORY_WITH_WEBHOOK, true))) {
-            writer.write(repositoryUrl);
+    public static void addFile(String fileUrl){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(Main.FILEPATH_GITHUB_FILE_WITH_WEBHOOK, true))) {
+            writer.write(fileUrl);
             writer.newLine();
         } catch (IOException e) {
             if(Main.debug)
@@ -41,7 +41,9 @@ public class GeneralWebhookChecker {
         }
     }
 
-    public static void actionWebook(String webHookUrl, String repositoryUrl, String fileUrl){
+    public static void actionWebook(String webHookUrl, String fileUrl){
+        String[] parts = fileUrl.split("/");
+        String repositoryUrl = "https://github.com/" + parts[3] + "/" + parts[4];
         System.out.println("[HIT] Funktionierender Webhook gefunden: " + fileUrl);
 
 
@@ -117,7 +119,7 @@ public class GeneralWebhookChecker {
         ezWebhook.setUsername("EZ HOOK LOGS");
         ezWebhook.setContent("Neuen Webhook gefunden!");
         ezWebhook.setAvatarUrl("https://i.ibb.co/dJg3RZS/Easy-Flick-logo.png");
-        ezWebhook.setTts(true);
+        ezWebhook.setTts(false);
         ezWebhook.addEmbed(new DiscordWebhook.EmbedObject()
                 .setTitle(webhook_username)
                 .setThumbnail(webhook_avatarUrl)
@@ -138,7 +140,7 @@ public class GeneralWebhookChecker {
                         "User Id: " + user_id + "\\n" +
                         "User Tag: #" + user_tag + "\\n" +
                         "User Flags: " + user_flags)
-                .setColor(Color.red)
+                .setColor(Color.blue)
                 .setFooter(date, "")
         );
         try {
@@ -154,10 +156,10 @@ public class GeneralWebhookChecker {
         webhook.setUsername("EasyFlick Bot");
         webhook.setContent("@everyone Found your Webhook!");
         webhook.setAvatarUrl("https://i.ibb.co/dJg3RZS/Easy-Flick-logo.png");
-        webhook.setTts(true);
+        webhook.setTts(false);
         webhook.addEmbed(new DiscordWebhook.EmbedObject()
                 .setTitle("WEBHOOK FOUND")
-                .setDescription(("We found your webhook online. Dont worry, you just have to change the url.\\n" +
+                .setDescription(("We found your webhook online. Dont worry, you just have to change your webhook url.\\n" +
                         "For more information just check out our discord link:\\n" +
                         "https://dsc.gg/easyflick"))
                 .setColor(Color.black)

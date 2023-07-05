@@ -4,8 +4,9 @@
 # Project exclude paths
 /out/
 /.idea/
-GITHUB_REPOSITORY_WITH_WEBHOOK
+GITHUB_FILE_WITH_WEBHOOK
 /GITHUB_REPOSITORYS_NO_WEBHOOK/
 GitHubScanner.iml
 config.json
 /META-INF/
+*.jar
