@@ -63,7 +63,7 @@ public class WebhookFileChecker implements Runnable{
                 }
             }else{
                 try {
-                    Thread.sleep(10 * 1000); // 100 Sekunden Pause machen
+                    Thread.sleep(Main.WEBHOOK_FILE_CHECKER_WAIT * 1000L); //  Pause machen
                 } catch (InterruptedException e) {
                     if(Main.debug)
                         e.printStackTrace();

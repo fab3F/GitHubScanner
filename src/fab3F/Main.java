@@ -22,6 +22,8 @@ public class Main {
     public static int WEBHOOK_FILE_FINDER_AMOUNT_MAX_URLS_IN_LIST; // Maximale Anzahl an Urls, die in der Liste sein sollen. Erst wenn weniger drin sind, werden neue hinzugefügt
     public static int WEBHOOK_FILE_FINDER_AMOUNT; // Anzahl an Webhook File Findern
     public static int WEBHOOK_FILE_CHECKER_AMOUNT; // Anzahl an Webhook File Checkern (am besten immer pro finder 10 checker)
+    public static int WEBHOOK_FILE_FINDER_WAIT;
+    public static int WEBHOOK_FILE_CHECKER_WAIT;
 
     public static String FILEPATH_GITHUB_FILE_WITH_WEBHOOK;
     public static String FILEPATH_GITHUB_FILES_NO_WEBHOOK;
@@ -53,6 +55,8 @@ public class Main {
         WEBHOOK_FILE_FINDER_AMOUNT_MAX_URLS_IN_LIST = config.getInt("WEBHOOK_FILE_FINDER_AMOUNT_MAX_URLS_IN_LIST");
         WEBHOOK_FILE_FINDER_AMOUNT = config.getInt("WEBHOOK_FILE_FINDER_AMOUNT");
         WEBHOOK_FILE_CHECKER_AMOUNT = config.getInt("WEBHOOK_FILE_CHECKER_AMOUNT");
+        WEBHOOK_FILE_FINDER_WAIT = config.getInt("WEBHOOK_FILE_FINDER_WAIT");
+        WEBHOOK_FILE_CHECKER_WAIT = config.getInt("WEBHOOK_FILE_CHECKER_WAIT");
         FILEPATH_GITHUB_FILE_WITH_WEBHOOK = config.getString("FILEPATH_GITHUB_FILE_WITH_WEBHOOK");
         FILEPATH_GITHUB_FILES_NO_WEBHOOK = config.getString("FILEPATH_GITHUB_FILES_NO_WEBHOOK");
 

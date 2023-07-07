@@ -107,7 +107,7 @@ public class WebhookCodeFinder implements Runnable{
             }else{
 
                 try {
-                    Thread.sleep(100 * 1000); // 100 Sekunden Pause
+                    Thread.sleep(Main.WEBHOOK_FILE_FINDER_WAIT * 1000L); // 100 Sekunden Pause
                 } catch (InterruptedException e) {
                     if(Main.debug)
                         e.printStackTrace();

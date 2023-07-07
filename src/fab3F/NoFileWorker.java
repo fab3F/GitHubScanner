@@ -104,7 +104,6 @@ public class NoFileWorker implements Runnable{
     }
 
     private void add(String fileUrl){
-        // https://github.com/X
         char letter = fileUrl.toLowerCase(Locale.ROOT).charAt(34);
         File file = new File(PATH, String.valueOf(letter));
         if(!file.exists()){
